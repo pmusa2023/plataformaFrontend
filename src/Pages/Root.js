@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import MainSection from '../Components/UI/MainSection';
-import Topnav from '../Components/Nav/TopNav';
+import Nav from '../Components/Nav/Nav';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
 function Root() {
@@ -9,7 +9,7 @@ function Root() {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <MainSection>
-          <Topnav />
+          <Nav />
           <Outlet />
         </MainSection>
       </ThemeProvider>

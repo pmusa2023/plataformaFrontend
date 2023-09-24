@@ -1,12 +1,12 @@
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import React from 'react';
-function Logo() {
+function Logo(props) {
   return (
     <React.Fragment>
       <IconButton sx={{ mr: 1 }} size="large">
         <svg
-          width={35}
+          width={30}
           viewBox="0 0 231 246"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,11 @@ function Logo() {
         </svg>
       </IconButton>
 
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{ flexGrow: 1, color: `${props.color}` }}
+      >
         Musa
       </Typography>
     </React.Fragment>

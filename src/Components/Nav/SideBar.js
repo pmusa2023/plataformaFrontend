@@ -8,11 +8,15 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
+
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+
+import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
+import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
+import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -72,6 +76,7 @@ function SideBar(props) {
       drawerWidth={props.drawerWidth}
       theme={theme}
       backgroundColor={props.backgroundColor}
+      anchor="right"
     >
       <DrawerHeader>
         <IconButton
@@ -88,63 +93,131 @@ function SideBar(props) {
       <Divider />
 
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
+        <ListItem disablePadding sx={{ display: 'block' }}>
+          <ListItemButton
+            sx={{
+              minHeight: 48,
+              justifyContent: props.open ? 'initial' : 'center',
+              px: 2.5,
+              color: props.color,
+            }}
+          >
+            <ListItemIcon
               sx={{
-                minHeight: 48,
-                justifyContent: props.open ? 'initial' : 'center',
-                px: 2.5,
+                minWidth: 0,
+                mr: props.open ? 3 : 'auto',
+                justifyContent: 'center',
                 color: props.color,
               }}
             >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: props.open ? 3 : 'auto',
-                  justifyContent: 'center',
-                  color: props.color,
-                }}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText
-                primary={text}
-                sx={{ opacity: props.open ? 1 : 0 }}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
+              <HomeOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="Início"
+              sx={{ opacity: props.open ? 1 : 0 }}
+            />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding sx={{ display: 'block' }}>
+          <ListItemButton
+            sx={{
+              minHeight: 48,
+              justifyContent: props.open ? 'initial' : 'center',
+              px: 2.5,
+              color: props.color,
+            }}
+          >
+            <ListItemIcon
               sx={{
-                minHeight: 48,
-                justifyContent: props.open ? 'initial' : 'center',
-                px: 2.5,
+                minWidth: 0,
+                mr: props.open ? 3 : 'auto',
+                justifyContent: 'center',
                 color: props.color,
               }}
             >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: props.open ? 3 : 'auto',
-                  justifyContent: 'center',
-                  color: props.color,
-                }}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText
-                primary={text}
-                sx={{ opacity: props.open ? 1 : 0 }}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
+              <VideocamOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="Portfólio"
+              sx={{ opacity: props.open ? 1 : 0 }}
+            />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding sx={{ display: 'block' }}>
+          <ListItemButton
+            sx={{
+              minHeight: 48,
+              justifyContent: props.open ? 'initial' : 'center',
+              px: 2.5,
+              color: props.color,
+            }}
+          >
+            <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: props.open ? 3 : 'auto',
+                justifyContent: 'center',
+                color: props.color,
+              }}
+            >
+              <CalendarTodayOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="Agenda"
+              sx={{ opacity: props.open ? 1 : 0 }}
+            />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding sx={{ display: 'block' }}>
+          <ListItemButton
+            sx={{
+              minHeight: 48,
+              justifyContent: props.open ? 'initial' : 'center',
+              px: 2.5,
+              color: props.color,
+            }}
+          >
+            <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: props.open ? 3 : 'auto',
+                justifyContent: 'center',
+                color: props.color,
+              }}
+            >
+              <FeedOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="Propostas"
+              sx={{ opacity: props.open ? 1 : 0 }}
+            />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding sx={{ display: 'block' }}>
+          <ListItemButton
+            sx={{
+              minHeight: 48,
+              justifyContent: props.open ? 'initial' : 'center',
+              px: 2.5,
+              color: props.color,
+            }}
+          >
+            <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: props.open ? 3 : 'auto',
+                justifyContent: 'center',
+                color: props.color,
+              }}
+            >
+              <PieChartOutlineOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="Dashboard"
+              sx={{ opacity: props.open ? 1 : 0 }}
+            />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Drawer>
   );

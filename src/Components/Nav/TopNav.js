@@ -19,7 +19,7 @@ const AppBar = styled(MuiAppBar, {
     duration: theme.transitions.duration.leavingScreen,
   }),
   ...(open && {
-    marginLeft: drawerWidth,
+    marginRight: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -45,22 +45,9 @@ export default function TopNav(props) {
         position="fixed"
         open={props.open}
         drawerWidth={props.drawerWidth}
+        elevation={0}
       >
         <Toolbar>
-          <IconButton
-            style={{ color: props.color }}
-            edge="start"
-            aria-label="open drawer"
-            onClick={props.sideBarHandler}
-            sx={{
-              marginRight: 5,
-
-              ...(props.open && { display: 'none' }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-
           <Logo color={props.color} />
 
           <Box display="flex" gap={4} color={props.color}>
@@ -81,6 +68,19 @@ export default function TopNav(props) {
             settings={['Account', 'Settings', 'Logout']}
         />*/}
           </Box>
+          <IconButton
+            style={{ color: props.color }}
+            edge="start"
+            aria-label="open drawer"
+            onClick={props.sideBarHandler}
+            sx={{
+              marginLeft: 5,
+
+              ...(props.open && { display: 'none' }),
+            }}
+          >
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       {LoginModalOpen && (

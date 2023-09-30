@@ -10,7 +10,7 @@ export default function ModalAuth(props) {
   const emailRef = useRef('');
   const passwordRef = useRef('');
   const authCtx = useContext(AuthContext);
-  const { isLoading, error, sendRequest, updateState } = useHttpRequest();
+  const { sendRequest, updateState } = useHttpRequest();
 
   async function submitHandler(e) {
     e.preventDefault();
